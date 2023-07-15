@@ -10,7 +10,7 @@ module.exports.savePhoto = (req, res, next) => {
   let url = req.body.photo;
 
   const options = {
-    folder: "smart-kitchen",
+    folder: "thebookclub",
   };
 
   cloudinary.uploader.upload(url, options, (error, result) => {
