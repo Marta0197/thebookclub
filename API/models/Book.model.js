@@ -1,19 +1,14 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const { REQUIRED_FIELD } = require("../config/errorMessages");
-const User = require("../models/User.model");
 
 
 
-const BookSchema = new mongoose.Schema(
+const BooksSchema = new mongoose.Schema(
   {
-    owner: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-        required: [true, REQUIRED_FIELD],
-      },
-    userName: {
+    title: {
         type: String,
+        required: [true, REQUIRED_FIELD],
       },
     bookText: {
       type: String,
@@ -21,9 +16,15 @@ const BookSchema = new mongoose.Schema(
     },
     author: {
       type: String,
+      required: [true, REQUIRED_FIELD],
     },
     photo: {
       type: String,
+    },
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: [true, REQUIRED_FIELD],
     },
   },
   {
@@ -31,6 +32,6 @@ const BookSchema = new mongoose.Schema(
   }
 );
 
-const Book = mongoose.model("Book", BookSchema);
+const Book = mongoose.model("Book", BooksSchema);
 
 module.exports = Book;

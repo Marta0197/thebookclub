@@ -34,6 +34,7 @@ module.exports.getCurrentUser = (req, res, next) => {
   console.log(userId);
   User.findById(userId)
     .populate("books")
+    .populate("booksCreated")
     .then((user) => {
       if (!user) {
         throw createError(StatusCodes.NOT_FOUND, "User not found");
