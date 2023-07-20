@@ -3,8 +3,7 @@ import * as Yup from 'yup';
 export const signupSchema = Yup.object({
   firstName: Yup
     .string('Email err')
-    .required('Required')
-    .min(5, 'Length invalid'),
+    .required('Required'),
   lastName: Yup
     .string('Email err')
     .required('Required'),
