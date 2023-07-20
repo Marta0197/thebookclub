@@ -4,6 +4,10 @@ const authController = require('../controllers/auth.controller');
 const usersController = require("../controllers/user.controller");
 const booksController = require("../controllers/books.controller");
 const upload = require("./storage.config");
+const photoController = require("../controllers/photo.controller");
+
+
+
 
 router.get("/", (req, res, next) => res.render("home"));
 
@@ -30,12 +34,24 @@ authMiddleware.isAuthenticated,
 upload.single("photo"),
 booksController.create);
 
+router.get("/my-books",
+authMiddleware.isAuthenticated,
+booksController.getBooksByCurrentUser);
+
+router.get("/detail-book/:id",
+authMiddleware.isAuthenticated,
+booksController.getBookById);
+
 router.get("/books",
 booksController.list);
 
 router.delete("/books/delete/:id",
 authMiddleware.isAuthenticated,
-booksController.deleteBook);
+booksController.deleteBooks);
+
+router.post("/books/save-image",
+authMiddleware.isAuthenticated,
+photoController.savePhoto);
 
 module.exports = router;
 
