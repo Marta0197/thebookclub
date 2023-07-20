@@ -12,6 +12,7 @@ const MyBooks = () => {
   useEffect(() => {
     getBooksByCurrentUser()
       .then((response) => {
+        console.log("Book response from backend:", response);
         setBooks(response);
         setIsLoading(false);
       })
