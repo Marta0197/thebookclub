@@ -22,7 +22,7 @@ const MyBooks = () => {
   }, []);
 
   return (
-    <div className="row my-3 recipes">
+    <div className="row my-3 books">
       {isLoading ? (
         <p>Loading...</p>
       ) : books && books.length > 0 ? (

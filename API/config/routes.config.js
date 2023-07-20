@@ -30,12 +30,16 @@ authMiddleware.isAuthenticated,
 upload.single("photo"),
 booksController.create);
 
+router.get("/my-books",
+authMiddleware.isAuthenticated,
+booksController.getBooksByCurrentUser);
+
 router.get("/books",
 booksController.list);
 
 router.delete("/books/delete/:id",
 authMiddleware.isAuthenticated,
-booksController.deleteBook);
+booksController.deleteBooks);
 
 module.exports = router;
 

@@ -6,7 +6,7 @@ import Profile from "./views/Profile/Profile";
 import BookCreator from "./views/BookCreator/BookCreator";
 import Signup from "./views/Signup/Signup";
 import MyBooks from "./views/MyBooks/MyBooks";
-//import DetailBook from "./views/DetailBook/DetailBook";
+import DetailBook from "./views/DetailBook/DetailBook";
 import Landing from "./views/Landing/Landing";
 
 function App() {
@@ -42,6 +42,14 @@ function App() {
           element={
             <ProtectedRoute>
               <MyBooks />
+            </ProtectedRoute>
+          }
+        />
+          <Route
+          path="detail-book/:id"
+          element={
+            <ProtectedRoute>
+              <DetailBook />
             </ProtectedRoute>
           }
         />

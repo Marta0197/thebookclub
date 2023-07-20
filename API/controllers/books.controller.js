@@ -20,17 +20,34 @@ module.exports.list = (req, res, next) => {
     .catch(next);
 };
 
-module.exports.deleteBook = (req, res, next) => {
-  const { id } = req.params;
+module.exports.getBooksByCurrentUser = (req, res, next) => {
+  const userId = req.currentUserId;
 
-  Book.findByIdAndDelete(id)
+  Book.find({ owner: userId })
+    .then((book) => res.json(book))
+    .catch(next);
+};
+
+module.exports.getBookById = (req, res, next) => {
+  const bookId = req.params.id;
+
+  Book.findById(bookId)
     .then((book) => {
       if (!book) {
-        throw createError(StatusCodes.NOT_FOUND, "Book not found");
+        return res.status(404).send("Book not found");
       }
 
-      res.sendStatus(StatusCodes.NO_CONTENT);
+      res.json(book);
     })
     .catch(next);
 };
+module.exports.deleteBooks = (req, res, next) => {
+  const { id } = req.params;
+  console.log("delete", id);
+  Book.findByIdAndDelete(id)
+    .then((book) => res.status(204).json(book))
+
+    .catch(next);
+};
+
 

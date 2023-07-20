@@ -10,10 +10,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const initialValues = {
-  owner: "",
-  userName: "",
-  bookText: "",
+  title:"",
   author: "",
+  bookText: "",
   photo: "",
 };
 const BookCreator = () => {
@@ -35,16 +34,14 @@ const BookCreator = () => {
     validationSchema: bookSchema,
     onSubmit: (values) => {
       const formData = new FormData();
-      formData.append("name", values.name);
-      formData.append("servings", values.servings);
-      formData.append("ingredients", values.ingredients);
-      formData.append("instructions", values.instructions);
-      formData.append("notes", values.notes);
+      formData.append("title", values.title);
+      formData.append("author", values.author);
+      formData.append("bookText", values.bookText);
       formData.append("photo", values.photo);
-      createRecipe(formData)
+      createBook(formData)
         .then((response) => {
           resetForm();
-          toast.success("Recipe created!", {
+          toast.success("Book created!", {
             position: toast.POSITION.BOTTOM_RIGHT,
           });
         })
@@ -60,81 +57,49 @@ const BookCreator = () => {
     <div className="container">
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <FormControl
-          text="Name"
-          error={touched.name && errors.name}
-          htmlFor="name"
+          text="Title"
+          error={touched.title && errors.title}
+          htmlFor="title"
         >
           <Input
-            id="name"
-            name="name"
+            id="title"
+            name="title"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.name}
-            error={touched.name && errors.name}
-            placeholder="Enter recipe name..."
+            value={values.title}
+            error={touched.title && errors.title}
+            placeholder="Enter the title..."
           />
         </FormControl>
         <FormControl
-          text="Servings"
-          error={touched.servings && errors.servings}
-          htmlFor="servings"
+          text="Author"
+          error={touched.author && errors.author}
+          htmlFor="author"
         >
           <Input
-            id="servings"
-            name="servings"
+            id="author"
+            name="author"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.servings}
-            error={touched.servings && errors.servings}
-            placeholder="Enter recipe servings..."
+            value={values.author}
+            error={touched.author && errors.author}
+            placeholder="Enter author..."
           />
         </FormControl>
         <FormControl
-          text="Ingredients"
-          error={touched.ingredients && errors.ingredients}
-          htmlFor="ingredients"
+          text="Booktext"
+          error={touched.bookText && errors.bookText}
+          htmlFor="bookText"
         >
           <Input
-            id="ingredients"
-            name="ingredients"
+            id="bookText"
+            name="bookText"
             type="text"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.ingredients}
-            error={touched.ingredients && errors.ingredients}
-            placeholder="Enter recipe ingredients..."
-          />
-        </FormControl>
-        <FormControl
-          text="Instructions"
-          error={touched.instructions && errors.instructions}
-          htmlFor="instructions"
-        >
-          <Input
-            id="instructions"
-            name="instructions"
-            type="textarea"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.instructions}
-            error={touched.instructions && errors.instructions}
-            placeholder="Enter recipe instructions..."
-          />
-        </FormControl>
-        <FormControl
-          text="Notes"
-          error={touched.notes && errors.notes}
-          htmlFor="notes"
-        >
-          <Input
-            id="notes"
-            name="notes"
-            type="text"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.notes}
-            error={touched.notes && errors.notes}
-            placeholder="Enter recipe notes..."
+            value={values.bookText}
+            error={touched.bookText && errors.bookText}
+            placeholder="Enter the text ..."
           />
         </FormControl>
         <FormControl

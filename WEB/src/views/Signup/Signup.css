@@ -1,3 +1,10 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Centra el contenido verticalmente */
+}
+
 .container {
     max-width: 400px;
     margin: 0 auto;

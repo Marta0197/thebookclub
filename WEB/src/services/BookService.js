@@ -15,9 +15,6 @@ export const getBooksByCurrentUser = () =>
 export const getBookById = (id) =>
   authenticatedHttp.get(`/detail-book/${id}`);
 
-export const getImageFromPrompt = (prompt) =>
-  authenticatedHttp.post("/books/search-image", { prompt });
-
 export const deleteBooks = (id) =>
   authenticatedHttp.delete(`/books/delete/${id}`);
 
