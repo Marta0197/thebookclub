@@ -12,7 +12,7 @@ export const listBooks = () => unauthenticatedHttp.get("/books");
 export const getBooksByCurrentUser = () =>
   authenticatedHttp.get(`/my-books`);
 
-export const getBookById = (id) =>
+  export const getBookById = (id) =>
   authenticatedHttp.get(`/detail-book/${id}`);
 
 export const deleteBooks = (id) =>
