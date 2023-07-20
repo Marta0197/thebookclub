@@ -1,0 +1,32 @@
+.landing-page {
+    background-image: url('https://res.cloudinary.com/du6hww6l9/image/upload/v1689628484/thebookclub/fondo_lw0dfp.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .landing-page-content {
+    text-align: center;
+    color: black;
+  }
+
+  .wrapper {
+    justify-content: center;
+
+    display: flex;
+    gap: 10px;  }
+
+    .header {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .logo{
+      height: 250px;
+    }
+    
