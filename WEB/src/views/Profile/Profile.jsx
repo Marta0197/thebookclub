@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import "./Profile.css";
 
@@ -7,10 +7,17 @@ const Profile = () => {
 
   return (
     <div className="profile container">
-      <h1>
-        {currentUser.firstName} {currentUser.lastName} {currentUser.userName}
-      </h1>
-      <h2>We are working on it!</h2>
+      <div className="profile-card">
+        <div className="profile-info">
+          <div className="profile-name">
+            {currentUser.firstName} {currentUser.lastName}
+          </div>
+          <div className="profile-email">{currentUser.userName}</div>
+          <div className="profile-bio">
+            Sorry, we are working to improve!
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

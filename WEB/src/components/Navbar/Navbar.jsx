@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../contexts/AuthContext";
 import { logout } from "../../stores/AccessTokenStore";
-import logo from "../../assets/images/logo_ideal.png";
+import logo from "../../assets/images/voladores.jpeg";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -45,28 +45,21 @@ const Navbar = () => {
               className="navbar-item"
               onClick={handleMenuOpen}
             >
-              Create a Book
-            </Link>
-            <Link
-              to="/books/search"
-              className="navbar-item"
-              onClick={handleMenuOpen}
-            >
-              Search Books
+              Upload a text
             </Link>
             <Link
               to="/my-books"
               className="navbar-item"
               onClick={handleMenuOpen}
             >
-              My Books
+              My texts
             </Link>
             <Link
               to="/profile"
               className="navbar-item"
               onClick={handleMenuOpen}
             >
-              Profile
+              My profile
             </Link>
             <button className="btn btn-secondary logout-btn" onClick={logout}>
               Logout

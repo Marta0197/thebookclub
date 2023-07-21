@@ -65,7 +65,7 @@ const Login = () => {
               onBlur={handleBlur}
               value={values.email}
               error={touched.email && errors.email}
-              placeholder="Enter your email..."
+              placeholder="Enter email..."
             />
           </FormControl>
 
@@ -81,13 +81,13 @@ const Login = () => {
               onBlur={handleBlur}
               value={values.password}
               error={touched.password && errors.password}
-              placeholder="Enter your password..."
+              placeholder="Enter password..."
               type="password"
             />
           </FormControl>
 
           <button
-            className="btn btn-primary"
+            className="btn-primary"
             type="submit"
             disabled={isSubmitting}
           >
