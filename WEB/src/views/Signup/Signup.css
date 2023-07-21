@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Centra el contenido verticalmente */
+  height: 100vh; 
 }
 
 .container {
@@ -46,7 +46,7 @@ body {
   
   button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #bcbbdfc5;
     color: #fff;
     border: none;
     border-radius: 5px;

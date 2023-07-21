@@ -41,7 +41,7 @@ const BookCreator = () => {
       createBook(formData)
         .then((response) => {
           resetForm();
-          toast.success("Book created!", {
+          toast.success("Creating text...", {
             position: toast.POSITION.BOTTOM_RIGHT,
           });
         })
@@ -68,7 +68,7 @@ const BookCreator = () => {
             onBlur={handleBlur}
             value={values.title}
             error={touched.title && errors.title}
-            placeholder="Enter the title..."
+            placeholder="Enter title..."
           />
         </FormControl>
         <FormControl
@@ -87,7 +87,7 @@ const BookCreator = () => {
           />
         </FormControl>
         <FormControl
-          text="Booktext"
+          text="Text"
           error={touched.bookText && errors.bookText}
           htmlFor="bookText"
         >
@@ -99,7 +99,7 @@ const BookCreator = () => {
             onBlur={handleBlur}
             value={values.bookText}
             error={touched.bookText && errors.bookText}
-            placeholder="Enter the text ..."
+            placeholder="Enter text ..."
           />
         </FormControl>
         <FormControl
@@ -119,7 +119,7 @@ const BookCreator = () => {
         </FormControl>
 
         <button
-          className="btn btn-primary"
+          className="btn btn-primary purple-btn"
           type="submit"
           disabled={isSubmitting}
         >

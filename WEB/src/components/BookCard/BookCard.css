@@ -1,63 +1,57 @@
 
-  .card-book {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-    margin: 20px auto;
-    margin-bottom: 50px;
-    border-radius: 10px;
-    overflow: hidden;
-  }
+.card-book-img-top {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
 
-  @media (max-width: 767px) {
-    .card-book {
-      flex-direction: column;
-      width: 90%;
-    }
-  }
-  
-  .card-book-img-top {
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-    margin: 20px;
-    border-radius: 10px;
-  }
-  
-  .card-book-body {
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-    line-height: 1.5;
-    border-top: 1px solid #fff;
-  padding-top: 10px;
-  margin-top: 10px;
-  }
+.card-book-body {
+  padding: 20px;
+  background-color: whitesmoke;
+}
 
-  @media (max-width: 767px) {
-    .card-book-body  {
-      width: 80%;
-    }
+.card-book-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center; 
+    text-transform: uppercase; 
+    text-decoration: overline;
+    margin-bottom: 10px; 
   }
+f  
 
-  .card-book-headline {
-    font-family: "Open Sans", sans-serif;
-    font-size: 22px;
-    color: #444444;
-    font-weight: bold;
-  }
-  
-  .card-book-body {
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    color: #444444;
-  }
+.card-book-author {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: end;
+  text-decoration: overline;
+}
+
+.card-book-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card-book-button:last-child {
+  background-color: #76b5c5;
+  border: 2px solid #76b5c5;;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 14px;
+  transition: background-color 0.3s ease;
+}
+
+.card-book-button:last-child:hover {
+  background-color: #76b5c5;;
+  border-color: #76b5c5;;
+}
 
 
-  .card-book-body p:not(:last-child) {
-    border-bottom: 1px solid #dee2e6;
-  }
+
+
+
+

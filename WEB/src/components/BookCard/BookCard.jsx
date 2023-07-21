@@ -7,12 +7,11 @@ const BookCard = ({ book, children }) => {
       <img
         className="card-book-img-top"
         src={book.photo}
-        alt={book.title}
       />
       <div className="card-book-body">
-        <h5 className="card-book-headline">{book.title}</h5>
-        <p className="card-book-text">{book.author}</p>
-        <p className="card-book-text">Text: {book.bookText}</p>
+        <h5 className="card-book-title">{book.title}</h5>
+        <p className="card-book-author">{book.author}</p>
+        <p className="card-book-text">{book.bookText}</p>
         {children}
       </div>
     </div>

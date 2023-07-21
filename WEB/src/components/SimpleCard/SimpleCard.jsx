@@ -8,9 +8,8 @@ const SimpleCard = ({ book, children, linkTo }) => {
         <img
           className="card-simple-img-top"
           src={book.photo}
-          alt={book.title}
         />
-        <div className="card-simple-name">{book.title}</div>
+        <div className="card-simple-title">{book.title}</div>
         {children}
       </div>
     </a>

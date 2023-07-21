@@ -24,7 +24,7 @@ const DetailBook = () => {
 
   const handleDeleteClick = (id) => {
     const confirmed = window.confirm(
-      "Are you sure you want to remove this book?"
+      "Are you sure you want to remove this text?"
     );
     if (confirmed) {
       deleteBooks(id)
@@ -55,7 +55,7 @@ const DetailBook = () => {
               </button>
               <button
                 onClick={() => handleDeleteClick(book._id)}
-                className="btn btn-danger"
+                className="btn-danger"
               >
                 <RiDeleteBin6Line />
               </button>
@@ -63,7 +63,7 @@ const DetailBook = () => {
           </BookCard>
         </div>
       ) : (
-        <p>Book not found</p>
+        <p>Text not found</p>
       )}
     </div>
   );

@@ -28,18 +28,15 @@ const MyBooks = () => {
         <p>Loading...</p>
       ) : books && books.length > 0 ? (
         books.map((book) => (
-          <div
-            key={book._id}
-            className="col-lg-3 col-md-4 col-sm-6 col-12 mb-3"
-          >
-            <SimpleCard
-              book={book}
-              linkTo={`/detail-book/${book._id}`}
-            ></SimpleCard>
+          <div key={book._id} className="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+            <div className="book-card">
+              <SimpleCard book={book} linkTo={`/detail-book/${book._id}`} />
+
+            </div>
           </div>
         ))
       ) : (
-        <p>No books found</p>
+        <p>No texts found</p>
       )}
     </div>
   );

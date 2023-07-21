@@ -2,7 +2,7 @@ import "./Landing.css";
 import AuthContext from "../../contexts/AuthContext";
 import { useContext } from "react";
 import { logout } from "../../stores/AccessTokenStore.js";
-import logo from "../../assets/images/logo.jpeg";
+import logo from "../../assets/images/voladores.jpeg";
 
 const Landing = () => {
   const { currentUser } = useContext(AuthContext);
@@ -46,8 +46,9 @@ const Landing = () => {
             <div>
               <img src={logo} alt="Logo" className="logo" />
             </div>
-            <h2>Welcome {currentUser.firstName} </h2>
-            <h4>What do you want to do today?</h4>
+            <h2>Hi! {currentUser.firstName} </h2>
+            <h5>{currentUser.userName} </h5>
+            <h3>What do you want to do today?</h3>
             <div className="wrapper">
               <button
                 className="btn btn-primary"
@@ -55,7 +56,7 @@ const Landing = () => {
                   window.location.href = "/create-book";
                 }}
               >
-                Crreate
+                Upload a text
               </button>
               <button
                 className="btn btn-primary"
@@ -63,7 +64,7 @@ const Landing = () => {
                   window.location.href = "/my-books";
                 }}
               >
-                My Books
+                My texts
               </button>
             </div>
           </div>
