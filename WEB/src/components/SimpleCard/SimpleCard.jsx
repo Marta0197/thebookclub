@@ -5,10 +5,6 @@ const SimpleCard = ({ book, children, linkTo }) => {
   return (
     <a href={linkTo} className="card-link">
       <div className="card-simple">
-        <img
-          className="card-simple-img-top"
-          src={book.photo}
-        />
         <div className="card-simple-title">{book.title}</div>
         {children}
       </div>

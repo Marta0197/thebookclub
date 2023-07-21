@@ -14,7 +14,7 @@ const Profile = () => {
           </div>
           <div className="profile-email">{currentUser.userName}</div>
           <div className="profile-bio">
-            Sorry, we are working to improve!
+            Sorry, we are improving for you!
           </div>
         </div>
       </div>
